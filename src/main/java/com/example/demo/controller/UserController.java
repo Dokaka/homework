@@ -27,18 +27,20 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @RestController
 @RequestMapping("/users")
-//@Api(value = "User APIs")
+@Api(value = "User APIs")
 public class UserController {
     @Autowired
     private IUserService iUserService;
 
-//    @ApiOperation(value="Create a user", response = UserDTO.class)
-//    @ApiResponses({
-//            @ApiResponse(code = 400, message="Bad request"),
-//            @ApiResponse(code = 500, message="Internal Server Error"),
-//    })
+    @ApiOperation(value="Get list of user", response = UserDTO.class)
+    @ApiResponses({
+            @ApiResponse(code = 400, message="Bad request"),
+            @ApiResponse(code = 500, message="Internal Server Error"),
+    })
     @GetMapping()
     public List<UserDTO> getUserInit(){
+
+//    public  ResponseEntity<?> getUserInit(){
         List<UserDTO> listUsers = iUserService.getAllUsers();
         return listUsers;
     }
