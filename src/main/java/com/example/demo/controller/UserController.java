@@ -44,6 +44,11 @@ public class UserController {
         List<UserDTO> listUsers = iUserService.getAllUsers();
         return listUsers;
     }
+//    @GetMapping()
+//    public ResponseEntity<?> getUserInit(){
+//        List<UserDTO> userDTOList = iUserService.getAllUsers();
+//        return ResponseEntity.ok(userDTOList);
+//    }
     @GetMapping(path = "/username/{username}")
     public UserDTO getUserByName(@PathVariable String username){
         UserDTO userDTO = iUserService.getUserByName(username);

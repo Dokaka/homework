@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity(name = "users")
 
 @Data
-public class UserEntity extends BaseEntity {
+public class UserEntity {
     //private static final long serialVersionUID = -297553281792804396L;
     @Id
     @GeneratedValue
