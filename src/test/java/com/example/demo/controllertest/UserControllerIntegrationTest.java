@@ -106,8 +106,10 @@ public class UserControllerIntegrationTest {
         mvc.perform( MockMvcRequestBuilders
                 .put("/users/hahaha")
                 .content(asJsonString(userDTO))
+
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.username").value("testCreateUser222"));
 
